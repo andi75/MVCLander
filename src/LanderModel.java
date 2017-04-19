@@ -4,11 +4,11 @@ public class LanderModel {
 	double thrust;
 	final static double g = 9.81;
 	
-	LanderModel(double height)
+	public void reset(double height)
 	{
 		this.height = height;
 		this.velocity = 0;
-		this.thrust = 0;
+		this.thrust = 0;		
 	}
 	
 	public boolean tick(double dt)
@@ -20,9 +20,9 @@ public class LanderModel {
 		if(height < 0)
 		{
 			height = 0;
-			return true;
+			return false;
 		}
 		else
-			return false;
+			return true;
 	}
 }

@@ -5,6 +5,7 @@ import javax.swing.JPanel;
 
 public class LanderView extends JPanel {
 	double height;
+	double velocity;
 	double visibleHeight;
 	
 	public LanderView(double visibleHeight)
@@ -25,7 +26,14 @@ public class LanderView extends JPanel {
 				(int)(w * 0.8), (int)(h * 0.8)
 				);
 		
-		g.setColor(Color.red);
+		if(velocity < -10.0)
+		{
+			g.setColor(Color.red);
+		}
+		else
+		{
+			g.setColor(new Color(0, 127, 0));
+		}
 		double y = height / visibleHeight;
 		g.fillRect( (int) (w * 0.3), (int) ( h * 0.8 - y * h * 0.6 - h * 0.1 ),
 				(int) (w * 0.4), (int) (h * 0.1)
