@@ -144,6 +144,7 @@ public class LanderControl implements MouseListener, Runnable, ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		model.reset(160);
 		starttime = System.currentTimeMillis();
+		lasttime = starttime;
 		isRunning = true;
 	}
 }
